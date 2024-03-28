@@ -1,0 +1,89 @@
+[
+    {
+        "id": "3539687b801c6c99",
+        "type": "tab",
+        "label": "[Client] RPi Flow",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c8d533b84edd96f1",
+        "type": "debug",
+        "z": "3539687b801c6c99",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 490,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "3f4b36eb3132a51f",
+        "type": "mqtt out",
+        "z": "3539687b801c6c99",
+        "name": "",
+        "topic": "RPi/Data",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "da8766062c6b5247",
+        "x": 480,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "117a357ddf702cb7",
+        "type": "rpi-sensehat in",
+        "z": "3539687b801c6c99",
+        "name": "HAT Temp, Humi, Pres",
+        "motion": false,
+        "env": true,
+        "stick": false,
+        "x": 160,
+        "y": 100,
+        "wires": [
+            [
+                "c8d533b84edd96f1",
+                "3f4b36eb3132a51f"
+            ]
+        ]
+    },
+    {
+        "id": "da8766062c6b5247",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "172.28.76.184",
+        "port": "49763",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]
